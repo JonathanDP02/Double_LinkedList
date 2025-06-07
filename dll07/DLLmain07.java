@@ -31,6 +31,13 @@ public class DLLmain07 {
             System.out.println("5. Tampilkan data");
             System.out.println("6. Cari Mahasiswa berdasarkan NIM");
             System.out.println("7. Sisipkan NIM di tengah-tengah");
+            System.out.println("8. Tambah pada indeks tertentu");
+            System.out.println("9. Hapus node setelah NIM tertentu");
+            System.out.println("10. Hapus node pada indeks tertentu");
+            System.out.println("11. Tampilkan data pertama (head)");
+            System.out.println("12. Tampilkan data terakhir (tail)");
+            System.out.println("13. Tampilkan data pada indeks tertentu");
+            System.out.println("14. Tampilkan jumlah data");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = scan.nextInt();
@@ -78,6 +85,52 @@ public class DLLmain07 {
                     list.insertAfter(keyNim, mhs);
                 }
                     break;
+
+                case 8:{
+                    System.out.print("Masukkan indeks: ");
+                    int index = scan.nextInt();
+                    scan.nextLine();
+
+                    mahasiswa07 mhs = inputMahasiswa(scan);
+                    list.add(index, mhs);
+                }
+                    break;
+
+                case 9:{
+                    System.out.print("Masukkan NIM yang menjadi acuan: ");
+                    String nim = scan.nextLine();
+                    list.removeAfter(nim);
+                }
+                    break;
+
+                case 10:{
+                    System.out.print("Masukkan indeks yang ingin dihapus: ");
+                    int index = scan.nextInt();
+                    scan.nextLine();
+                    list.remove(index);
+                }
+                    break;
+
+                case 11:
+                    list.getFirst();
+                    break;
+
+                case 12:
+                    list.getLast();
+                    break;
+
+                case 13:{
+                    System.out.print("Masukkan indeks: ");
+                    int index = scan.nextInt();
+                    scan.nextLine();
+                    list.getIndex(index);
+                }
+                    break;
+
+                case 14:
+                    System.out.println("Jumlah data: " + list.getSize());
+                    break;
+
                 case 0:
                     System.out.println("Keluar dari program.");
                     break;
